@@ -22,10 +22,10 @@ public class JDBCExample4 {
 		try {
 			
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String type = "jdbc:oracle:thin:@"; //드라이버의 종류
-			String host = "localhost"; // DB 서버 컴퓨터의 IP 또는 도메인 주소
-			String port = ":1521"; // 프로그램 연결을 위한 구분번호
-			String dbName = ":XE"; // DBMS 이름(XE= eXpress Edition)
+//			String type = "jdbc:oracle:thin:@"; //드라이버의 종류
+//			String host = "localhost"; // DB 서버 컴퓨터의 IP 또는 도메인 주소
+//			String port = ":1521"; // 프로그램 연결을 위한 구분번호
+//			String dbName = ":XE"; // DBMS 이름(XE= eXpress Edition)
 			String userName = "KH_PHJ"; // 사용자 계정명
 			String password = "KH1234"; // 계정 비밀번호
 			

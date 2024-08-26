@@ -31,6 +31,8 @@ public class JDBCExample5 {
 		
 		// SELECT가 아니기 때문에 ResultSet 필요없음
 		
+		Scanner sc = new Scanner(System.in);
+		
 		try {
 			
 			/** 2. DriverManager 객체를 이용해서 Connection 객체 생성하기 */
@@ -41,7 +43,6 @@ public class JDBCExample5 {
 			
 			conn = DriverManager.getConnection(url, userName, password);
 			
-			Scanner sc = new Scanner(System.in);
 			
 			System.out.print("아이디 입력 : ");
 			String id = sc.nextLine();
@@ -102,6 +103,7 @@ public class JDBCExample5 {
 				/** 8.사용한 JDBC 객체자원반환 */
 				if(pstmt != null) pstmt.close();
 				if(conn  != null) conn.close();
+				if(sc    != null) sc.close();
 				
 			} catch (Exception e) {
 				e.printStackTrace();
