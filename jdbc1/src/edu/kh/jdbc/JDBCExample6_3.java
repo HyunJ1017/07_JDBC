@@ -18,7 +18,8 @@ public class JDBCExample6_3 {
 			service = new JDBCExample6_2();
 			
 		} catch (ClassNotFoundException | SQLException e) {
-			e.printStackTrace();
+			System.out.println("Somthing is Error");
+			System.exit(0);
 		}
 		
 	}
