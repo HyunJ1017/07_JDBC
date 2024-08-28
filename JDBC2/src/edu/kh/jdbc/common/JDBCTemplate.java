@@ -60,6 +60,8 @@ public class JDBCTemplate {
 			 * 			읽어오는 파일의 내용을 수정하면 되기 때문에
 			 * 			Java 코드 수정 x -> 추가 컴파일 필요 x
 			 * 			--> 개발 시간 단축 !!
+			 * - 프로그램 실행시 입력받으면 안되나
+			 * - 필요한데 없으면 입력창이 띄워지게 하거나
 			 */
 			
 			// driver.xml 파일 내용 읽어오기
@@ -156,6 +158,7 @@ public class JDBCTemplate {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
+			
 		}
 	}
 	
@@ -169,6 +172,7 @@ public class JDBCTemplate {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
+			
 		}
 	}
 	

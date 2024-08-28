@@ -1,6 +1,6 @@
 package edu.kh.jdbc.dao;
 
-import static edu.kh.jdbc.common.JDBCTemplate.*;
+import static edu.kh.jdbc.jdbc.JDBCTemplate.*;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -11,7 +11,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.kh.jdbc.common.JDBCTemplate;
+import edu.kh.jdbc.jdbc.JDBCTemplate;
 import edu.kh.jdbc.dto.User;
 
 // DAO (Data Access Object) : 데이터가 저장된 곳에 접근하는 용도의 객체
