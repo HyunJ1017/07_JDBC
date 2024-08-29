@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<!-- p + 자동완성 -->
+	
+	<!-- 
+		entry : K, V 한 쌍을 나타내는 단위
+		<entry key="K">V</entry>
+		주의 : V값의 띄어쓰기도 읽어옴
+	 -->
+	
+	<entry key="insertUser">
+		INSERT INTO TB_USER
+		VALUES(SEQ_USER_NO.NEXTVAL,
+			?,
+			?,
+			?,
+			DEFAULT)
+	</entry>
+	
+	
+</properties>

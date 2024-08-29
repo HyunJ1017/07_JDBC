@@ -34,7 +34,10 @@ public class InsertServlet extends HttpServlet {
 			boolean result = service.searchSameId(userId);
 			int resultNum = 0;
 			String message = null;
-			if(result) {
+			System.out.println(result);
+			
+			if(!result) {
+				System.out.println("true 실행");
 				// 중복되는 ID가 없는경우
 				User user = new User();
 				user.setUserName(userName);
@@ -50,14 +53,16 @@ public class InsertServlet extends HttpServlet {
 				
 				
 			} else {
+				System.out.println("false 실행");
 				// ID가 중복될 경우
 				message = "중복되는 ID가 이미 존재합니다.";
 			}
 			
-			req.getSession().setAttribute("message", message);
+			if(!message.isBlank()) req.getSession().setAttribute("message", message);
 			req.setAttribute("userId", userId);
 			req.setAttribute("userPw", userPw);
 			req.setAttribute("userName", userName);
+			
 			
 			String path = "/WEB-INF/views/user/insertUser.jsp";
 			req.getRequestDispatcher(path).forward(req, resp);

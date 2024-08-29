@@ -31,6 +31,8 @@ public class UserService {
 	
 	public int insertUser(User user) throws SQLException {
 		Connection conn = getConnection();
+		
+		
 		int result = dao.insertUser(conn, user);
 		if(result > 0) {
 			commit(conn);

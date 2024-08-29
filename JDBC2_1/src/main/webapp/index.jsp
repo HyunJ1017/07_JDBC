@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -67,7 +68,11 @@
 
 
   </main>
-  
+
+<c:if test="${not empty sessionScope.message}" >
+  <script>alert("${message}");</script>
+</c:if>
+<c:remove var="message" scope="session" />
 
   <script src="/resources/js/index.js"></script>
 </body>

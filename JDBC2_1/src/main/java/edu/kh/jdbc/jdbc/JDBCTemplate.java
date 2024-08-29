@@ -30,6 +30,7 @@ public class JDBCTemplate {
 			String password = prop.getProperty("password");
 			
 			conn = DriverManager.getConnection(url, userName, password);
+			conn.setAutoCommit(false);
 			
 		} catch (Exception e) {
 			e.printStackTrace();

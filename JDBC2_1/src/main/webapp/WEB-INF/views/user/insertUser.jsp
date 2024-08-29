@@ -22,7 +22,7 @@
 <c:if test="${not empty sessionScope.message}" >
   <script>alert("${message}");</script>
 </c:if>
-<c:remove var="massege" scope="session" />
+<c:remove var="message" scope="session" />
 
 </body>
 </html>

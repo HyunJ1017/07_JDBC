@@ -137,7 +137,11 @@ public class UserDao {
 	
 	
 	
-	
+	/**
+	 * 유저 전체검색
+	 * @param conn
+	 * @return
+	 */
 	public List<User> selectAll(Connection conn) throws SQLException {
 		// 1. 결과 저장용 변수 선언
 		List<User> userList = new ArrayList<User>();
@@ -185,7 +189,12 @@ public class UserDao {
 		return userList;
 	}
 
-
+	/**
+	 * 이름(전달받은 단어를 포함한)검색
+	 * @param conn
+	 * @param keyword 검색할 이름
+	 * @return
+	 */
 	public List<User> selectName(Connection conn, String keyword) throws SQLException {
 		// 1. 결과 저장용 변수 선언
 		// 2. SQL 작성
@@ -258,6 +267,7 @@ public class UserDao {
 			
 			while (rs.next()) {
 				result = true;
+				System.out.println("중복아이디존재");
 			}
 			
 		} finally {
