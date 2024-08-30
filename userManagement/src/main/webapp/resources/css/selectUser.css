@@ -1,0 +1,61 @@
+html>*{
+  background-color: black;
+  color: white;
+}
+
+header > h1{
+  color: rgb(66, 165, 245);
+}
+
+hr{
+  border: 0;
+  border-top: 1px solid rgb(111,195,223);
+}
+
+main{
+  border: 1px solid rgb(111,195,223);
+  padding: 100px;
+}
+
+tr > th{
+  width: 250px;
+  height: 50px;
+}
+
+tr > td{
+  width: 350px;
+  height: 50px;
+}
+
+
+table{
+  border-spacing: 0cm;
+  border-style: solid;
+  border-color: rgb(111,195,223);
+  background-color: black;
+  color: white;
+  box-shadow: 0px 0px 5px;
+
+  margin: 50px 0px 20px;
+}
+
+td{
+  text-align: center;
+}
+
+td:hover{
+  /* font-weight: bolder; */
+  font-size: 1.3em;
+  border: 2px dotted rgb(243, 133, 24);
+}
+
+button{
+  background-color: black;
+  border: 1px solid rgb(111,195,223);
+  border-radius: 3px;
+  height: 25px;
+  color: white;
+  
+  padding: auto;
+  margin: 5px;
+}

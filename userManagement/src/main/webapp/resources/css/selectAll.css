@@ -1,0 +1,92 @@
+html>*{
+  background-color: black;
+  color: white;
+}
+
+header > h1{
+  color: rgb(66, 165, 245);
+}
+
+header > h3{
+  color: rgb(66, 165, 245);
+}
+
+hr{
+  border: 0;
+  border-top: 1px solid rgb(111,195,223);
+}
+
+main{
+  border: 1px solid rgb(111,195,223);
+  padding: 100px;
+}
+
+#userList{
+  border-spacing: 0cm;
+}
+
+/* NO */
+tr > td:nth-child(1){
+  width: 80px;
+  height: 30px;
+  text-align: center;
+}
+
+/* 아이디 */
+tr > td:nth-child(2){
+  width: 180px;
+  height: 30px;
+  text-align: center;
+}
+
+/* 비밀번호 */
+/* tr > td:nth-child(4){
+  width: 70px;
+  text-align: center;
+} */
+
+/* 이름 */
+tr > td:nth-child(3){
+  min-width: 150px;
+  height: 30px;
+  text-align: center;
+}
+
+/* 가입일 */
+/* tr > td:nth-child(6){
+  width: 180px;
+  text-align: center;
+} */
+
+a {
+  color: rgb(255, 175, 0);
+}
+
+table{
+  border-spacing: 0cm;
+  border-style: solid;
+  border-color: rgb(111,195,223);
+  /* background-color: black; */
+  color: white;
+  /* box-shadow: 0px 0px 5px; */
+
+  margin: 50px 0px 20px;
+  font-size: 1.2em;
+}
+
+td:hover{
+  /* font-weight: bolder; */
+  font-size: 1.3em;
+  border: 2px dotted rgb(243, 133, 24);
+}
+
+button{
+  background-color: black;
+  border: 1px solid rgb(111,195,223);
+  border-radius: 3px;
+  height: 25px;
+  color: white;
+  
+  padding: auto;
+  margin: 5px;
+}

@@ -23,16 +23,17 @@
      <div>
         ID : <input type="text" name="userId" id="userId">
 
+        <%-- 아이디 중복 여부 확인해서 메시지 출력 --%>
         <span id="check" class="green">사용 가능한 아이디 입니다.</span>
       </div>
       <div>
-        PW : <input type="password" name="userPw">
+        PW : <input type="password" name="userPw" id="userPw">
       </div>
       <div>
-        Name : <input type="text" name="userName">
+        Name : <input type="text" name="userName" id="userName">
       </div>
       <div class="rowDiv">
-        <button>등록</button><div class="hrefDiv"><a href="/">돌아가기</a></div>
+        <button id="insertBtn" disabled>등록</button><div class="hrefDiv"><a href="/">돌아가기</a></div>
       </div>
     </form>
 
@@ -45,7 +46,11 @@
 
   </footer>
 
-
+  <section class="colDiv">
+    <a href="/"><div class="aDiv">1</div></a>
+    <a href="/signUp"><div class="aDiv">1</div></a>
+    <a href="/selectAll"><div class="aDiv">1</div></a>
+  </section>
 
 <script src="/resources/js/signUp.js"></script>
 </body>
