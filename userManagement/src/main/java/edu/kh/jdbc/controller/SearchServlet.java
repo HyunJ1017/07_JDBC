@@ -22,16 +22,16 @@ public class SearchServlet extends HttpServlet {
 		try {
 			
 			String searchId = req.getParameter("searchId");
-			
 			UserService service = new UserServiceImpl();
 			List<User> searchList = service.searchId(searchId);
+			int listSize = searchList.size();
 			
 			if(searchList.isEmpty()) {
 				req.getSession().setAttribute("message", "입력한" + searchId + "를 포함한 ID가 없습니다.");
 			} else {
 				req.setAttribute("userList", searchList);
 			}
-			
+			req.setAttribute("listSize", listSize);
 			String path = "/WEB-INF/views/selectAll.jsp";
 			
 			req.getRequestDispatcher(path).forward(req, resp);

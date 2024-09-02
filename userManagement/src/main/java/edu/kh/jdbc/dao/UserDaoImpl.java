@@ -7,7 +7,6 @@ import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -135,7 +134,7 @@ public class UserDaoImpl implements UserDao{
 				String enrollDate  = rs.getString("ENROLL_DATE");
 				
 				loginUser 
-					= new User(userNo, userId, userPw, userName, enrollDate);
+					= new User(userNo, id, pw, userName, enrollDate);
 			}
 			
 			
@@ -212,6 +211,41 @@ public class UserDaoImpl implements UserDao{
 		return userList;
 	}
 
+	
+	@Override
+	public List<User> searchId(Connection conn, String searchId, String order) throws Exception {
+		
+		List<User> userList = new ArrayList<User>();
+		
+		try {
+			String sql = prop.getProperty("searchOrder");
+			sql = sql + order;
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, searchId);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				int userNo = rs.getInt("USER_NO");
+				String userId = rs.getString("USER_ID");
+				String userPw = rs.getString("USER_PW");
+				String userName = rs.getString("USER_NAME");
+				String enrollDate = rs.getString("DATE");
+				
+				User user = new User(userNo, userId, userPw, userName, enrollDate);
+				userList.add(user);
+				
+			}
+		
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return userList;
+	}
+	
 
 	@Override
 	public User selectUser(Connection conn, int searchNo) throws Exception {
@@ -291,6 +325,9 @@ public class UserDaoImpl implements UserDao{
 		
 		return result;
 	}
+
+
+	
 	
 	
 	

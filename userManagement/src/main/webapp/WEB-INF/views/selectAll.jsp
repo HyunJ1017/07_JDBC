@@ -20,6 +20,7 @@
 
     <c:if test="${not empty param.searchId}" >
     <h3>"${param.searchId}" 검색결과</h3>
+    <input type="hidden" name="resultId" value="${param.searchId}">
     </c:if>
 
     <form action="/search">
@@ -29,13 +30,17 @@
 
     <hr>
 
+    <div>
+      전체 User : ${listSize} 명
+    </div>
+
     <table id="userList" border="1">
       <thead>
         <tr>
-          <th>NO</th>
-          <th>아이디</th>
+          <th><a href="/search/byNo">NO</a></th>
+          <th><a href="/search/byId">아이디</a></th>
           <%-- <th>비밀번호</th> --%>
-          <th>이름</th>
+          <th><a href="/search/byName">이름</a></th>
           <%-- <th>등록일</th> --%>
         </tr>
       </thead>

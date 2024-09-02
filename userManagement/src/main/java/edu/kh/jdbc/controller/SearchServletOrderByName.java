@@ -1,8 +1,6 @@
 package edu.kh.jdbc.controller;
 
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.Date;
 import java.util.List;
 
 import edu.kh.jdbc.dto.User;
@@ -14,31 +12,38 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/selectAll")
-public class SelectAllServlet extends HttpServlet {
-	
+@WebServlet("/search/byName")
+public class SearchServletOrderByName extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		UserService service = new UserServiceImpl();
-		
 		try {
-			List<User> userList = service.selectAll();
-			int listSize = userList.size(); 
-			req.setAttribute("userList", userList);
-			req.setAttribute("listSize", listSize);
-			req.setAttribute("check", "User Management 전체 목록");
-			
-			String path = "/WEB-INF/views/selectAll.jsp";
-			
-			req.getRequestDispatcher(path).forward(req, resp);
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
+		String resultId = req.getParameter("resultId");
+		if(resultId == null) {
+			resultId = "";
+		}
+		
+		UserService service = new UserServiceImpl();
+		List<User> searchList = service.searchId(resultId, 3);
+		int listSize = searchList.size();
+		
+		if(searchList.isEmpty()) {
+			req.getSession().setAttribute("message", "입력한" + resultId + "를 포함한 ID가 없습니다.");
+		} else {
+			req.setAttribute("userList", searchList);
+		}
+		req.setAttribute("listSize", listSize);
+		String path = "/WEB-INF/views/selectAll.jsp";
+		
+		req.getRequestDispatcher(path).forward(req, resp);
+		
+		
 		} catch (Exception e) {
 			e.printStackTrace();
+			
 		}
+		
 	}
-	
+
 }

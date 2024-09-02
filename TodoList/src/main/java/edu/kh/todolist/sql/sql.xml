@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<!-- 
+		driver.xml 파일 : DB 연결 정보를 작성하는 외부 파일
+		entry : K, V 한 쌍을 나타내는 단위
+		<entry key="K"> V </entry>
+	 -->
+	 
+	 <!-- 할 일 등록 -->
+	 <entry key="insertTodo">
+	 	INSERT INTO TODOLIST
+	 	VALUES(
+	 		SEQ_LIST_NO.NEXTVAL,
+	 		?,
+	 		?,
+	 		DEFAULT,
+	 		DEFAULT,
+	 		DEFAULT
+	 		)
+	 </entry>
+	 
+	 <!-- 모두조회 -->
+	 <entry key="allList">
+	 	SELECT
+	 		LIST_NO,
+	 		TODO_TITLE,
+	 		TODO_DETAIL,
+	 		COMPLETE,
+	 		TO_CHAR(REG_DATE, 'YYYY"년" MM"월" DD"일"') REG_DATE,
+	 		COLOR
+	 	FROM TODOLIST
+	 	ORDER BY LIST_NO
+	 </entry>
+	 
+	 <!-- 모두조회(2) -->
+	 <entry key="allListOderBy">
+	 	SELECT
+	 		LIST_NO,
+	 		TODO_TITLE,
+	 		TODO_DETAIL,
+	 		COMPLETE,
+	 		TO_CHAR(REG_DATE, 'YYYY"년" MM"월" DD"일"') REG_DATE,
+	 		COLOR
+	 	FROM TODOLIST
+	 	ORDER BY COMPLETE 
+	 </entry>
+	 
+	 <!-- 검색 -->
+	 <entry key="selectListNo">
+	 	SELECT
+	 		LIST_NO,
+	 		TODO_TITLE,
+	 		TODO_DETAIL,
+	 		COMPLETE,
+	 		TO_CHAR(REG_DATE, 'YYYY"년" MM"월" DD"일"') REG_DATE,
+	 		COLOR
+	 	FROM TODOLIST
+	 	WHERE LIST_NO = 
+	 </entry>
+	 
+	 <!-- 완료여부 변경 -->
+	 <entry key="updateComplete">
+	 	UPDATE TODOLIST
+	 	SET COMPLETE = ?
+	 	WHERE LIST_NO = ?
+	 </entry>
+	 
+	 <!-- 완료여부 변경 -->
+	 <entry key="updateTodo">
+	 	UPDATE TODOLIST
+	 	SET
+	 		TODO_TITLE = ?,
+	 		TODO_DETAIL = ?,
+	 		COLOR = ?
+	 	WHERE LIST_NO = ?
+	 </entry>
+	 
+	 <!-- 삭제 -->
+	 <entry key="deleteTodo">
+	 	DELETE
+	 	FROM TODOLIST
+	 	WHERE LIST_NO = 
+	 </entry>
+	 
+	 
+	
+	 
+	
+</properties>

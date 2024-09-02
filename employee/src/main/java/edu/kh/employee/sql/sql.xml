@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<!-- 
+		driver.xml 파일 : DB 연결 정보를 작성하는 외부 파일
+		entry : K, V 한 쌍을 나타내는 단위
+		<entry key="K"> V </entry>
+	 -->
+	 
+	 <!-- 할 일 등록 -->
+	 
+	 
+	 <!-- 모두조회 -->
+	 <entry key="selectAll">
+	 	SELECT
+	 		EMP_ID,
+	 		EMP_NAME,
+	 		EMP_NO,
+			EMAIL,
+			PHONE,
+			DEPT_CODE,
+			JOB_CODE,
+			SAL_LEVEL,
+			SALARY,
+			BONUS,
+			MANAGER_ID,
+			TO_CHAR(HIRE_DATE, 'YYYY"년" MM"월" DD"일"') HIRE_DATE,
+			TO_CHAR(ENT_DATE, 'YYYY"년" MM"월" DD"일"') ENT_DATE,
+			ENT_YN
+		FROM EMPLOYEE2
+	 </entry>
+	 
+	 <!-- 검색 -->
+	 <entry key="selectId">
+	 	SELECT
+	 		EMP_ID,
+	 		EMP_NAME,
+	 		EMP_NO,
+			EMAIL,
+			PHONE,
+			DEPT_CODE,
+			JOB_CODE,
+			SAL_LEVEL,
+			SALARY,
+			BONUS,
+			MANAGER_ID,
+			TO_CHAR(HIRE_DATE, 'YYYY"년" MM"월" DD"일"') HIRE_DATE,
+			TO_CHAR(ENT_DATE, 'YYYY"년" MM"월" DD"일"') ENT_DATE,
+			ENT_YN
+		FROM EMPLOYEE2
+	 	WHERE EMP_ID = 
+	 </entry>
+	 
+	 <!-- 부서 검색 -->
+	 <entry key="getDepartment">
+	 	SELECT
+	 		DEPT_TITLE,
+	 		LOCATION_ID
+		FROM DEPARTMENT2
+	 	WHERE DEPT_ID = ?
+	 </entry>
+	 
+	 <!-- 잡코드 검색 -->
+	 <entry key="getJobName">
+	 	SELECT
+	 		JOB_NAME
+		FROM JOB
+	 	WHERE JOB_CODE = ?
+	 </entry>
+	 
+	 <!-- 로케이션코드 검색 -->
+	 <entry key="getLocation">
+	 	SELECT
+			NATIONAL_CODE,
+			LOCAL_NAME,
+			NATIONAL_NAME
+		FROM LOCATION
+		JOIN NATIONAL USING(NATIONAL_CODE)
+		WHERE LOCAL_CODE = ?
+	 </entry>
+	 
+	
+	 
+	 
+	
+	 
+	
+</properties>

@@ -44,6 +44,14 @@ public interface UserService {
 	 * @throws Exception 
 	 */
 	List<User> searchId(String searchId) throws Exception;
+	
+	/** 아이디 검색 + 정렬
+	 * @param searchId
+	 * @param num	2: ID 오름차순, 3: 이름 오름차순
+	 * @return
+	 * @throws Exception
+	 */
+	List<User> searchId(String searchId, int num) throws Exception;
 
 
 	/** 유저 PK USER_NO 조회
@@ -68,6 +76,8 @@ public interface UserService {
 	 * @throws Exception
 	 */
 	int updateUser(User user) throws Exception;
+
+
 	
 	
 	

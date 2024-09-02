@@ -44,6 +44,15 @@ public interface UserDao {
 	 * @return UserList
 	 */
 	List<User> searchId(Connection conn, String searchId) throws Exception;
+	
+	/**검색어가 아이디에 포함된 사용자 조회+ 정렬
+	 * @param conn
+	 * @param searchId
+	 * @param order
+	 * @return
+	 * @throws Exception
+	 */
+	List<User> searchId(Connection conn, String searchId, String order) throws Exception;
 
 	/**USER_NO 검색
 	 * @param conn

@@ -87,6 +87,21 @@ public class UserServiceImpl implements UserService{
 		return userList;
 	}
 
+	@Override
+	public List<User> searchId(String searchId, int num) throws Exception {
+		Connection conn = getConnection();
+		// 데이터가공
+		searchId = '%' + searchId + '%';
+		String order = "";
+		if(num == 2) {
+			order = " ORDER BY USER_ID ASC ";
+		} else if (num == 3) {
+			order = " ORDER BY USER_NAME ASC ";
+		}
+		List<User> userList = dao.searchId(conn, searchId, order);
+		close(conn);
+		return userList;
+	}
 
 	@Override
 	public User selectUser(String userNo) throws Exception {
@@ -120,4 +135,8 @@ public class UserServiceImpl implements UserService{
 		close(conn);
 		return result;
 	}
+
+
+
+
 }
