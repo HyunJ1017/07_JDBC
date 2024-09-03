@@ -17,7 +17,11 @@
 
 
   <main>
-  
+
+    <div>
+      <a href="/nationalView">nationalView</a>
+    </div>
+
     <table border="1">
 
       <thead>
